@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Transaction List" >
+      <div class="slds-m-horizontal_medium slds-m-top_small" >
+        <!-- Card Body  expanded-rows={expandedRows} -->
+        <c-transaction-date-cell
+                key-field="id"
+                columns={columns}
+                data={data}
+             
+                >
+        </c-transaction-date-cell>
+
+      </div>
+    </lightning-card>
+</template>

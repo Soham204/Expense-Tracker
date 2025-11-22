@@ -1,0 +1,10 @@
+<template>
+    <template if:true={isGroupHeader}>
+        <b>{value}</b>
+        <lightning-badge label={weekday}></lightning-badge>
+    </template>
+
+    <template if:false={isGroupHeader}>
+        {value} not grouped
+    </template>
+</template>

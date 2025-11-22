@@ -1,0 +1,17 @@
+<template >
+    
+
+
+    <template if:false={typeAttributes.weekday}>
+        <div style="padding-top: 6px;padding-bottom:6px">
+        {value} 
+        </div>
+    </template>
+    
+    <template if:true={typeAttributes.weekday}>
+         <div style="padding-top: 4px;padding-bottom:4px">
+        <b style="margin-right: 12px">{value}</b>
+        <lightning-badge label={typeAttributes.weekday}></lightning-badge>
+        </div>
+    </template>
+</template>

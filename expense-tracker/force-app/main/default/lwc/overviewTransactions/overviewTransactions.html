@@ -1,0 +1,18 @@
+<template>
+  <lightning-card variant="base">
+    <div>
+      <div class="slds-grid">
+        <div class="slds-col slds-size_1-of-12 slds-var-m-around_medium slds-m-top_small">
+          <lightning-select value={selectVal} name="page" label="Transactions Per Page" options={productOptions}
+            onchange={handleChange}></lightning-select>
+        </div>
+        <div class="slds-col slds-size_1-of-12 slds-var-m-around_medium slds-m-top_small">
+          <lightning-input type="date" name="fromDate" value={fromDate} onchange={handleChange} label="From Date">
+          </lightning-input>
+
+
+        </div>
+      </div>
+    </div>
+  </lightning-card>
+</template>

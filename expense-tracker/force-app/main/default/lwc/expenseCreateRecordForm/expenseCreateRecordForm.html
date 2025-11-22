@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Add Expense" icon-name="standard:record">
+        <div class="slds-var-m-around_medium slds-m-top_small">
+
+            <lightning-record-edit-form object-api-name={objectApiName} onsuccess={handleSuccess} onerror={handleError}>
+
+                <lightning-messages></lightning-messages>
+                
+                        
+                    <lightning-input-field field-name="Amount__c"></lightning-input-field>
+                    <lightning-input-field field-name="Category__c"></lightning-input-field>
+                    <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field field-name="Type__c"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field field-name="Payment_Method__c"></lightning-input-field>
+                    </div>
+                    </div>
+
+                    <lightning-input-field field-name="Date__c"></lightning-input-field>
+                    <lightning-input-field field-name="Description__c"></lightning-input-field>
+
+              
+                <div class="slds-var-m-top_medium">
+                    <lightning-button variant="brand" type="submit" label="Save">
+                    </lightning-button>
+                </div>
+
+            </lightning-record-edit-form>
+
+        </div>
+    </lightning-card>
+</template>

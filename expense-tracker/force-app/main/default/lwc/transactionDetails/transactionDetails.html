@@ -1,0 +1,24 @@
+<template>
+
+    <lightning-card title="Transaction List" icon-name="standard:drafts">
+
+        <lightning-button-icon icon-name="utility:refresh" alternative-text="Refresh" slot="actions" class="refresh-btn"
+            onclick={handleRefresh}>
+        </lightning-button-icon>
+        <lightning-button name="new-with-defaults" label="New Expense" 
+            slot="actions" class="slds-m-around_medium" onclick={navigateToNewContactWithDefaults}>
+        </lightning-button>
+        <div class="slds-var-m-around_medium slds-m-top_small">
+
+                <c-transaction-date-cell key-field="id" columns={columns} data={tableData} hide-checkbox-column>
+                </c-transaction-date-cell>
+
+
+        </div>
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+    </lightning-card>
+
+
+</template>
