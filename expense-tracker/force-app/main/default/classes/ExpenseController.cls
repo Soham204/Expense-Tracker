@@ -21,6 +21,28 @@ public with sharing class ExpenseController {
             }
             expMap.get(dt).add(e);
         }
+        system.debug(fromDate);
+        system.debug(toDate);
+        system.debug(expMap.keySet());
         return expMap;
     }
+    
+@AuraEnabled(cacheable=true)
+public static Decimal getTotalExpense(Date fromDate, Date toDate, String expType){
+    Decimal totalSum = 0;
+
+    List<AggregateResult> arResult = [
+        SELECT SUM(Amount__c) Total_Sum
+        FROM Expense__c
+        WHERE DAY_ONLY(Date__c ) >= :fromDate
+        AND DAY_ONLY(Date__c ) <= :toDate
+        AND Type__c = :expType
+    ];
+
+    if (!arResult.isEmpty()) {
+        totalSum = (Decimal) arResult[0].get('Total_Sum');
+    }
+    return totalSum;
+}
+
 }

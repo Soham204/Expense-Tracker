@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Message channel used for transaction list updates.</description>
+    <isExposed>true</isExposed>
+
+    <lightningMessageFields>
+        <description>Updated page size (limit)</description>
+        <fieldName>limit</fieldName>
+    </lightningMessageFields>
+
+    <lightningMessageFields>
+        <description>Updated starting date filter</description>
+        <fieldName>fromDate</fieldName>
+    </lightningMessageFields>
+
+    <lightningMessageFields>
+        <description>Updated ending date filter</description>
+        <fieldName>toDate</fieldName>
+    </lightningMessageFields>
+
+    <masterLabel>updatesChannel</masterLabel>
+</LightningMessageChannel>

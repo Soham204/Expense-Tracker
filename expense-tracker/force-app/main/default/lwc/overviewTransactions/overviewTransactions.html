@@ -1,18 +1,85 @@
 <template>
-  <lightning-card variant="base">
-    <div>
-      <div class="slds-grid">
-        <div class="slds-col slds-size_1-of-12 slds-var-m-around_medium slds-m-top_small">
-          <lightning-select value={selectVal} name="page" label="Transactions Per Page" options={productOptions}
-            onchange={handleChange}></lightning-select>
-        </div>
-        <div class="slds-col slds-size_1-of-12 slds-var-m-around_medium slds-m-top_small">
-          <lightning-input type="date" name="fromDate" value={fromDate} onchange={handleChange} label="From Date">
-          </lightning-input>
+  <div class="slds-grid slds-grid_vertical-stretch slds-gutters_x-small">
+    <div class="slds-col slds-size_3-of-6"  >
+
+      <lightning-card title="Filter Options" icon-name="standard:filter" variant="base">
+        <div>
+          <div class="slds-grid slds-gutters">
+
+            <div class="slds-col  slds-m-horizontal_medium ">
+
+              <lightning-select value={selectVal} name="page" label="Transactions Per Page" options={productOptions}
+                onchange={handleChange}></lightning-select>
+            </div>
+            <div class="slds-col slds-m-horizontal_medium">
+              <lightning-input type="date" name="fromDate" value={fromDate} onchange={handleChange} label="From Date">
+              </lightning-input>
 
 
+            </div>
+            <div class="slds-col  slds-m-horizontal_medium ">
+              <lightning-input type="date" name="toDate" value={toDate} onchange={handleChange} label="To Date">
+              </lightning-input>
+
+
+            </div>
+          </div>
         </div>
-      </div>
+      </lightning-card>
     </div>
-  </lightning-card>
+    <div class="slds-col  slds-size_1-of-6" >
+      <lightning-card variant="base" style="height:100%" icon-name="utility:money" >
+
+        <h3 slot="title">
+            
+            Total Income
+        </h3>
+            <template if:true={totalexp}>
+                <div class=" slds-p-left_xx-large slds-text-heading_large slds-text-color_success slds-var-m-bottom_medium">
+                    
+                    <span class="font-bold">{totalincome}</span>
+                    
+                </div>
+            </template>
+      </lightning-card>
+    </div>
+    <div class="slds-col  slds-size_1-of-6" >
+      <lightning-card variant="base" style="height:100%" icon-name="utility:money" >
+
+        <h3 slot="title">
+            
+            Total Expense
+        </h3>
+            <template if:true={totalexp}>
+                <div class=" slds-p-left_xx-large slds-text-heading_large slds-text-color_error slds-var-m-bottom_medium">
+                    
+                    <span class="font-bold">{totalexp}</span>
+                    
+                </div>
+            </template>
+      </lightning-card>
+    </div>
+
+        <div class="slds-col  slds-size_1-of-6" >
+      <lightning-card variant="base" style="height:100%" icon-name="utility:money" >
+
+        <h3 slot="title">
+            
+            Investment / SIP
+        </h3>
+            <template if:true={totalexp}>
+                <div class=" slds-p-left_xx-large slds-text-heading_large slds-text-color_success slds-var-m-bottom_medium">
+                    
+                    <span class="font-bold">{totalinvestment}</span>
+                    
+                </div>
+            </template>
+      </lightning-card>
+    </div>
+    <!--<div class="slds-col  slds-size_1-of-6" style="height:100%">
+      <lightning-card variant="base" title="Hello" icon-name="standard:account">
+        <p class="slds-p-horizontal_small"> total expense is {totalexp}</p>
+      </lightning-card>
+    </div> -->
+  </div>
 </template>
