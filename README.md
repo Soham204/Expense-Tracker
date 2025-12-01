@@ -19,9 +19,9 @@ Clean UI, quick entry, and easy filtering.
 
 ## Screenshot
 
-```md
-![Expense Tracker Screenshot](path/to/screenshot.png)
-```
+
+![Expense Tracker Screenshot](https://github.com/user-attachments/assets/d19e7e1a-8828-40f4-a6bb-4c2e7bd2311a)
+
 
 ---
 
@@ -45,12 +45,4 @@ sf project deploy start
 sf org open
 ```
 
----
 
-
----
-
-If you want, I can also generate:
-✅ A super-minimal README
-✅ A detailed README
-✅ One with badges (GitHub, Salesforce, LWC)
