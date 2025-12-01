@@ -25,24 +25,27 @@ Clean UI, quick entry, and easy filtering.
 
 ---
 
+
 ## Setup 
 
-### **Authorize your org**
+### **1. Clone this repository**
+
+```bash
+git clone https://github.com/Soham204/Expense-Tracker.git
+cd expense-tracker-salesforce
+```
+
+### **2. Authorize your org**
 
 ```bash
 sf org login web --alias ExpenseTrackerOrg
 ```
 
-### **Push source**
+### **3. Push source**
 
 ```bash
 sf project deploy start
 ```
 
-### **Open the org**
-
-```bash
-sf org open
-```
 
 
